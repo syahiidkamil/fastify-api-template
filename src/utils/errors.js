@@ -24,7 +24,7 @@ const createForbiddenError = (message = 'Forbidden') => {
   return new AppError(403, message, 'FORBIDDEN');
 };
 
-module.exports = {
+export {
   AppError,
   createNotFoundError,
   createUnauthorizedError,

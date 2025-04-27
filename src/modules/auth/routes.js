@@ -1,8 +1,8 @@
 // src/modules/auth/routes.js
-const handlers = require('./handlers');
-const schemas = require('./schemas');
+import * as handlers from './handlers.js';
+import * as schemas from './schemas/index.js';
 
-function authRoutes(fastify, options, done) {
+export default function authRoutes(fastify, options, done) {
   // Public routes
   fastify.post('/register', { 
     schema: schemas.registerSchema 
@@ -42,5 +42,3 @@ function authRoutes(fastify, options, done) {
   
   done();
 }
-
-module.exports = authRoutes;

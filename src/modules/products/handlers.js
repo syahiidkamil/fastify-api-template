@@ -1,5 +1,5 @@
 // src/modules/products/handlers.js
-const ProductService = require('./service');
+import ProductService from './service.js';
 
 async function getAllProducts(request, reply) {
   const productService = new ProductService(this.prisma);
@@ -79,7 +79,7 @@ async function deleteProduct(request, reply) {
   }
 }
 
-module.exports = {
+export {
   getAllProducts,
   getProductById,
   createProduct,

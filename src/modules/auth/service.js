@@ -1,8 +1,8 @@
 // src/modules/auth/service.js
-const bcrypt = require('bcrypt');
-const { createUnauthorizedError, createBadRequestError, createForbiddenError } = require('../../utils/errors');
+import bcrypt from 'bcrypt';
+import { createUnauthorizedError, createBadRequestError, createForbiddenError } from '../../utils/errors.js';
 
-class AuthService {
+export default class AuthService {
   constructor(prisma) {
     this.prisma = prisma;
   }
@@ -101,5 +101,3 @@ class AuthService {
     return userWithoutPassword;
   }
 }
-
-module.exports = AuthService;

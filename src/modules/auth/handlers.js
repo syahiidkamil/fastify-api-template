@@ -1,5 +1,5 @@
 // src/modules/auth/handlers.js
-const AuthService = require('./service');
+import AuthService from './service.js';
 
 async function register(request, reply) {
   const authService = new AuthService(this.prisma);
@@ -198,7 +198,7 @@ async function listUsers(request, reply) {
   }
 }
 
-module.exports = {
+export {
   register,
   registerAdmin,
   registerSuperAdmin,

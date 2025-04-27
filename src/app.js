@@ -1,20 +1,20 @@
 // src/app.js
-const fastify = require('fastify');
-const cors = require('@fastify/cors');
-const swagger = require('@fastify/swagger');
-const swaggerUi = require('@fastify/swagger-ui');
-const pino = require('pino');
-require('dotenv').config();
+import fastify from 'fastify';
+import cors from '@fastify/cors';
+import swagger from '@fastify/swagger';
+import swaggerUi from '@fastify/swagger-ui';
+import pino from 'pino';
+import 'dotenv/config';
 
 // Import plugins
-const loggerPlugin = require('./plugins/logger');
-const prismaPlugin = require('./plugins/prisma');
-const jwtPlugin = require('./plugins/jwt');
-const rbacPlugin = require('./plugins/rbac');
+import loggerPlugin from './plugins/logger.js';
+import prismaPlugin from './plugins/prisma.js';
+import jwtPlugin from './plugins/jwt.js';
+import rbacPlugin from './plugins/rbac.js';
 
 // Import routes
-const authRoutes = require('./modules/auth/routes');
-const productRoutes = require('./modules/products/routes');
+import authRoutes from './modules/auth/routes.js';
+import productRoutes from './modules/products/routes.js';
 
 // Logger configuration
 function createLoggerConfig() {
@@ -66,7 +66,7 @@ function createLoggerConfig() {
   }
 }
 
-function build(opts = {}) {
+export default function build(opts = {}) {
   // Merge default logger config with passed options
   const options = {
     logger: createLoggerConfig(),
@@ -120,5 +120,3 @@ function build(opts = {}) {
 
   return app;
 }
-
-module.exports = build;

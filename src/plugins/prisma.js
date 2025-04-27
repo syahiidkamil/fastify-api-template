@@ -1,8 +1,8 @@
 // src/plugins/prisma.js
-const fp = require('fastify-plugin');
-const { PrismaClient } = require('@prisma/client');
+import fp from 'fastify-plugin';
+import { PrismaClient } from '@prisma/client';
 
-module.exports = fp(async function(fastify, opts) {
+export default fp(async function(fastify, opts) {
   const prisma = new PrismaClient();
 
   await prisma.$connect();

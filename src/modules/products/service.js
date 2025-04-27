@@ -1,7 +1,7 @@
 // src/modules/products/service.js
-const { createNotFoundError } = require('../../utils/errors');
+import { createNotFoundError } from '../../utils/errors.js';
 
-class ProductService {
+export default class ProductService {
   constructor(prisma) {
     this.prisma = prisma;
   }
@@ -47,5 +47,3 @@ class ProductService {
     });
   }
 }
-
-module.exports = ProductService;

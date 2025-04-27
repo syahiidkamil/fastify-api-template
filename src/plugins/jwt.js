@@ -1,8 +1,9 @@
 // src/plugins/jwt.js
-const fp = require('fastify-plugin');
+import fp from 'fastify-plugin';
+import fastifyJwt from '@fastify/jwt';
 
-module.exports = fp(async function(fastify, opts) {
-  fastify.register(require('@fastify/jwt'), {
+export default fp(async function(fastify, opts) {
+  fastify.register(fastifyJwt, {
     secret: process.env.JWT_SECRET
   });
 

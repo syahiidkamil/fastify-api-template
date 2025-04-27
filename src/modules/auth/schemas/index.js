@@ -155,7 +155,7 @@ const listUsersSchema = {
   }
 };
 
-module.exports = {
+export {
   registerSchema,
   registerAdminSchema,
   registerSuperAdminSchema,

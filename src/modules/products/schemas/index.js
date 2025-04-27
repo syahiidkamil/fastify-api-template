@@ -82,7 +82,7 @@ const deleteProductSchema = {
   }
 };
 
-module.exports = {
+export {
   productSchema,
   getProductsSchema,
   getProductSchema,

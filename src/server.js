@@ -1,6 +1,6 @@
 // src/server.js
-const buildApp = require('./app');
-require('dotenv').config();
+import buildApp from './app.js';
+import 'dotenv/config';
 
 const app = buildApp({
   // We'll override the default Fastify logging behavior

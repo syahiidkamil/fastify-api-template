@@ -1,8 +1,8 @@
 // src/modules/products/routes.js
-const handlers = require('./handlers');
-const schemas = require('./schemas');
+import * as handlers from './handlers.js';
+import * as schemas from './schemas/index.js';
 
-function productRoutes(fastify, options, done) {
+export default function productRoutes(fastify, options, done) {
   // Public routes - no authentication required
   fastify.get('/', { schema: schemas.getProductsSchema }, handlers.getAllProducts);
   fastify.get('/:id', { schema: schemas.getProductSchema }, handlers.getProductById);
@@ -25,5 +25,3 @@ function productRoutes(fastify, options, done) {
   
   done();
 }
-
-module.exports = productRoutes;
